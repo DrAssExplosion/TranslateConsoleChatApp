@@ -5,13 +5,13 @@ using namespace std;
 class Socket
 {
 public:
-    Socket();
-    static void SendMessage(string message);
-    static void SendMessage(string name, string message);
+    static void SocketStart();
+    static void SendSocketMessage(string message);
+    static void SendSocketMessage(string name, string message);
 
 private:
-    int _port;
-    string _addr;
+    inline static int _port;
+    inline static string _addr;
     static void ClientHandler();
     static void SendMessageToServer(string message);
 };

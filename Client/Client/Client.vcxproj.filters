@@ -24,12 +24,24 @@
     <ClCompile Include="Socket.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="TranslateText.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Json.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Socket.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="TranslateText.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Json.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,7 +9,7 @@ class Console
 {
 private:
     int _width, _height;
-    inline static string _name, _language, _chatText;
+    inline static string _name, _chatText;
     inline static CommandListMap CommandList;
     static void EventHelp();
     static void EventUsersList();
@@ -19,7 +19,9 @@ private:
     static void EventChangeChannel();
 
 public:
+    inline static string _language, _accessToken, _folderIdTranslate;
     Console(const int& height, const int& width);
+    static string GetLanguage();
     static void ChangeName(const string& name);
     static void ChangeLanguage(const string& language);
     static void LoginInChat();
