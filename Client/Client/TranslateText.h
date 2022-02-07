@@ -1,9 +1,11 @@
 #pragma once
 #include <string>
+using std::string;
 
 class TranslateText
 {
 public:
-	static std::string Translate(const std::string &text);
+	static string Translate(const string text);
+	static string Translate(const string text, const string language);
 };
 

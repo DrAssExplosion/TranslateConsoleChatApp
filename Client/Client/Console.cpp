@@ -50,12 +50,12 @@ string Console::GetLanguage()
 void Console::LoginInChat()
 {
 	cout << "Name: "; // Name
-	cin >> _name;
-	cout << "Language. Standart ISO 639-1 (ru, en, ...): "; // Language
-	cin >> _language;
-	while (_language != "ru" && _language != "en") {
+	getline(cin, _name);
+	cout << "Language. Standart ISO 639-1 (ru, en, de, es, pt ...): "; // Language
+	getline(cin, _language);
+	while (_language != "ru" && _language != "en" && _language != "de" && _language != "es" && _language != "pt") {
 		cout << endl << "Only 'ru' or 'en'" << endl;
-		cin >> _language;
+		getline(cin, _language);
 	}
 	string str = _name + " logged into the chat !\n";
 	Socket::SocketStart();

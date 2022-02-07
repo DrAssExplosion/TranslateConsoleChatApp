@@ -19,7 +19,7 @@
 #pragma comment(lib, "Normaliz.lib" )
 #pragma comment(lib, "Ws2_32.lib")
 #pragma comment(lib, "advapi32.lib")
-
+#pragma execution_character_set( "utf-8" )
 using namespace std;
 
 
@@ -32,14 +32,17 @@ static size_t my_write(void* buffer, size_t size, size_t nmemb, void* param)
 }
 
 
-string TranslateText::Translate(const string& text) {
-	string response;
-	string textTranslated;
+string TranslateText::Translate(const string text) {
+	string result = TranslateText::Translate(text, Console::_language);
+	return result;
+};
+string TranslateText::Translate(const string text, const string language) {
+	u8string response;
 	CURL* curl = curl_easy_init();
 
 	struct curl_slist* headers = NULL;
 	string token_header = "Authorization: Bearer " + Console::_accessToken; // access_token is keyword 
-	string jsonstr = Json::StringifyYandexTranslate(text);
+	string jsonstr = Json::StringifyYandexTranslate(text, language);
 
 	if (curl) {
 		curl_easy_setopt(curl, CURLOPT_URL, "https://translate.api.cloud.yandex.net/translate/v2/translate"); // Url

@@ -23,10 +23,10 @@ void ClientHandler(int index)
 		cout << "message_size - " << message_size << endl;
 		for (int i = 0; i < Counter; i++)
 		{
-			/*if (i == index)
+			if (i == index)
 			{
 				continue;
-			}*/
+			}
 			send(Connections[i], (char*)&message_size, sizeof(int), 0);
 			send(Connections[i], message, message_size, 0);
 		}

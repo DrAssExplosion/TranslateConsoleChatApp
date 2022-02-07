@@ -61,7 +61,7 @@ void Socket::SendSocketMessage(string name, string message)
 void Socket::SendMessageToServer(string message)
 {
 	int message_size = message.size();
-	send(Connection, (char*)&message_size, sizeof(int), 0);    // Отправляем размер строки серверу
+	send(Connection, (char*)&message_size, sizeof(int), 0); // Отправляем размер строки серверу
 	send(Connection, message.c_str(), message_size, 0); // Отправляем строку серверу
 };
 
